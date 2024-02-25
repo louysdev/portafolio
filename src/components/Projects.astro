@@ -1,0 +1,202 @@
+---
+import LinkButton from "../components/LinkButton.astro";
+import Flutter from "../icons/Flutter.astro";
+import Azure from "../icons/Azure.astro";
+import Firebase from "../icons/Firebase.astro";
+import PostgreSQL from "../icons/PostgreSQL.astro";
+import Node from "../icons/Node.astro";
+import Strapi from "../icons/Strapi.astro";
+import Waze from "../icons/Waze.astro";
+import GoogleMaps from "../icons/Google.astro";
+import Javascript from "../icons/Javascript.astro";
+import React from "../icons/React.astro";
+import Github from "../icons/Github.astro";
+import Vite from "../icons/Vite.astro";
+import WebSite from "../icons/WebSite.astro";
+
+const TAGS = {
+  FLUTTER: {
+    name: "Flutter",
+    class: "bg-blue-600 text-white",
+    icon: Flutter,
+  },
+  AZURE: {
+    name: "Azure",
+    class: "bg-blue-800 text-white",
+    icon: Azure,
+  },
+  FIREBASE: {
+    name: "Firebase",
+    class: "bg-yellow-600 text-white",
+    icon: Firebase,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-[#336791] text-white",
+    icon: PostgreSQL,
+  },
+  NODEJS: {
+    name: "Node.js",
+    class: "bg-[#285625] text-white",
+    icon: Node,
+  },
+  STRAPI: {
+    name: "Strapi",
+    class: "bg-[#3330b2] text-white",
+    icon: Strapi,
+  },
+  WAZE: {
+    name: "Waze",
+    class: "bg-blue-500 text-white",
+    icon: Waze,
+  },
+  GOOGLEMAPS: {
+    name: "Google Maps",
+    class: "bg-[#2b8e45] text-white",
+    icon: GoogleMaps,
+  },
+  REACTNATIVE: {
+    name: "React Native",
+    class: "bg-blue-900 text-white",
+    icon: React,
+  },
+  JAVASCRIPT: {
+    name: "Javascript",
+    class: "bg-yellow-800 text-white",
+    icon: Javascript,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-[#0892b1] text-white",
+    icon: React,
+  },
+  VITE: {
+    name: "Vite",
+    class: "bg-[#5e4aa2] text-white",
+    icon: Vite,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Nope INC - Gestion de ventas y distribucion de mercancia",
+    description:
+      "Aplicacion desarrollada para implementar un sistema de gestión, distribución y ventas de mercancías a bodegas, mini-markets y colmados. Busca agilizar el proceso que conlleva la venta de mercancía de un almacén a un local interesado. Desde recibir el pedido del local hasta cuando se despacha el pedido y se entrega al local en cuestión.",
+    link: "",
+    github: "https://github.com/louysdev/nopeinc-app",
+    image: "./projects/nope-inc.webp",
+    tags: [
+      TAGS.FLUTTER,
+      TAGS.AZURE,
+      TAGS.FIREBASE,
+      TAGS.POSTGRESQL,
+      TAGS.NODEJS,
+      TAGS.STRAPI,
+      TAGS.WAZE,
+      TAGS.GOOGLEMAPS,
+    ],
+  },
+  {
+    title: "Simple Task - Recordatorio de tareas",
+    description:
+      "Consite en una aplicacion que me recordara de las tareas pendientes que tengo por realizar. La idea surgio por la necesidad de tener una manera facil de poder anotar todos mis pendientes y poder recordarme.",
+    link: "",
+    github: "https://github.com/louysdev/simple-task-app",
+    image: "./projects/simple-task.webp",
+    tags: [TAGS.REACTNATIVE, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Tres en raya - IA",
+    description:
+      "Un tres en raya pero llevado mas alla. Tiene modo de juego para dos jugadores y de un jugador contra una IA simulada. Contiene un algoritmo que va aprendiendo de las jugadas del oponente para que la IA realize jugadas mas complejas.",
+    link: "https://tresenraya.laetusdev.software",
+    github: "https://github.com/louysdev/simple-task-app",
+    image: "./projects/tres-en-raya.webp",
+    tags: [TAGS.REACT, TAGS.VITE, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "El Consejero - Amigo de fiestas",
+    description:
+      "Una aplicacion que te respondera 'Si' o 'No' a cualquier cosa que le preguntes, con un enfoque en las fiestas.",
+    link: "",
+    github: "https://github.com/louysdev/el-consejero",
+    image: "./projects/el-consejero.webp",
+    tags: [TAGS.FLUTTER],
+  },
+  {
+    title: "Login Page Twitter - Recreacion",
+    description:
+      "Recreación de página de inicio de sesión que posee Twitter (X)",
+    link: "",
+    github: "https://github.com/louysdev/recreation-loginpage-twitter",
+    image: "./projects/login-twitter.webp",
+    tags: [TAGS.REACT, TAGS.VITE, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Noticias al Rojo Vivo - Web Scraping",
+    description:
+      "Aplicacion de noticias que obtiene los ariticulos del periódico nacional (Diario Libre) a través de web scrapping.",
+    link: "",
+    github: "https://github.com/louysdev/noticias-rojo-vivo",
+    image: "./projects/noticias-rojo-vivo.webp",
+    tags: [TAGS.REACT, TAGS.VITE, TAGS.JAVASCRIPT],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="grid grid-cols-2 lg:grid-cols-3 gap-2 mb-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <Github class="size-6" />
+                  Repositorio
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <WebSite class="size-6" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>

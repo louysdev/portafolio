@@ -1,0 +1,34 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+
+const experienceList = [
+  {
+    title: "PASANTIA - Analista Programador",
+    company: "Grupo Humano",
+    location: "Santo Domingo, Republica Dominicana",
+    date: "Enero 2023 - Abril 2023",
+    description:
+      "Diseñar y programar soluciones informáticas a medida para cubrir las necesidades específicas de la organización. Identificar oportunidades de mejora y proponer soluciones efectivas para optimizar el rendimiento y funcionalidad de las aplicaciones. Realizar pruebas exhaustivas de rendimiento y depuración para garantizar que las aplicaciones cumplan con los estándares de calidad.",
+  },
+  {
+    title: "Soporte Tecnico",
+    company: "Almacén Arrocera el Café",
+    location: "Santo Domingo, Republica Dominicana",
+    date: "Octubre 2021 - Enero 2023",
+    description:
+      "Encargado del sistema de seguridad y monitoreo. Configurar, reparar y diagnosticar los equipos de la empresa. Manejo y administración del sistema interno de la empresa.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-4">
+  {
+    experienceList.map((experience) => {
+      return (
+        <li class="mb-10 ms-4">
+          <ExperienceItem {...experience} />
+        </li>
+      );
+    })
+  }
+</ol>
