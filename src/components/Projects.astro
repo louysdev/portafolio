@@ -12,6 +12,7 @@ import Javascript from "../icons/Javascript.astro";
 import React from "../icons/React.astro";
 import Github from "../icons/Github.astro";
 import Vite from "../icons/Vite.astro";
+import Android from "../icons/Android.astro";
 import WebSite from "../icons/WebSite.astro";
 
 const TAGS = {
@@ -82,7 +83,7 @@ const PROJECTS = [
     title: "Nope INC - Gestion de ventas y distribucion de mercancia",
     description:
       "Aplicacion desarrollada para implementar un sistema de gestión, distribución y ventas de mercancías a bodegas, mini-markets y colmados. Busca agilizar el proceso que conlleva la venta de mercancía de un almacén a un local interesado. Desde recibir el pedido del local hasta cuando se despacha el pedido y se entrega al local en cuestión.",
-    link: "",
+    link: "https://github.com/louysdev/nopeinc-app/releases/download/release/nope-inc.apk",
     github: "https://github.com/louysdev/nopeinc-app",
     image: "./projects/nope-inc.webp",
     tags: [
@@ -100,7 +101,7 @@ const PROJECTS = [
     title: "Simple Task - Recordatorio de tareas",
     description:
       "Consite en una aplicacion que me recordara de las tareas pendientes que tengo por realizar. La idea surgio por la necesidad de tener una manera facil de poder anotar todos mis pendientes y poder recordarme.",
-    link: "",
+    link: "https://github.com/louysdev/simple-task-app/releases/download/release/simple-task.apk",
     github: "https://github.com/louysdev/simple-task-app",
     image: "./projects/simple-task.webp",
     tags: [TAGS.REACTNATIVE, TAGS.JAVASCRIPT],
@@ -118,7 +119,7 @@ const PROJECTS = [
     title: "El Consejero - Amigo de fiestas",
     description:
       "Una aplicacion que te respondera 'Si' o 'No' a cualquier cosa que le preguntes, con un enfoque en las fiestas.",
-    link: "",
+    link: "https://github.com/louysdev/el-consejero/releases/download/release/el-consejero.apk",
     github: "https://github.com/louysdev/el-consejero",
     image: "./projects/el-consejero.webp",
     tags: [TAGS.FLUTTER],
@@ -126,8 +127,8 @@ const PROJECTS = [
   {
     title: "Login Page Twitter - Recreacion",
     description:
-      "Recreación de página de inicio de sesión que posee Twitter (X)",
-    link: "",
+      "Recreación de página de inicio de sesión que posee Twitter (X). Me he dado a la tarea de realizar el nuevo diseño que implementaron junto a unos cuantos cambios que he realizado al sitio para que fuera mas responsivo.",
+    link: "https://recreation-loginpage-twitter.netlify.app",
     github: "https://github.com/louysdev/recreation-loginpage-twitter",
     image: "./projects/login-twitter.webp",
     tags: [TAGS.REACT, TAGS.VITE, TAGS.JAVASCRIPT],
@@ -136,7 +137,7 @@ const PROJECTS = [
     title: "Noticias al Rojo Vivo - Web Scraping",
     description:
       "Aplicacion de noticias que obtiene los ariticulos del periódico nacional (Diario Libre) a través de web scrapping.",
-    link: "",
+    link: "https://noticias-rojo-vivo.netlify.app",
     github: "https://github.com/louysdev/noticias-rojo-vivo",
     image: "./projects/noticias-rojo-vivo.webp",
     tags: [TAGS.REACT, TAGS.VITE, TAGS.JAVASCRIPT],
@@ -152,7 +153,7 @@ const PROJECTS = [
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <img
               alt="Recién llegado vs 5 años en Nueva Zelanda"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              class="object-cover object-top w-full transition duration-500 h-full md:scale-110 md:group-hover:scale-105"
               loading="lazy"
               src={image}
             />
@@ -164,16 +165,14 @@ const PROJECTS = [
             {title}
           </h3>
           <div class="flex flex-wrap mt-2">
-            <ul class="grid grid-cols-2 lg:grid-cols-3 gap-2 mb-2">
+            <ul class="my-2">
               {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
+                <span
+                  class={`${tag.class} text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-lg me-2  border border-gray-500`}
+                >
+                  <tag.icon class="size-6 me-1" />
+                  {tag.name}
+                </span>
               ))}
             </ul>
 
@@ -189,8 +188,13 @@ const PROJECTS = [
               )}
               {link && (
                 <LinkButton href={link}>
-                  <WebSite class="size-6" />
-                  Preview
+                  {link.includes("apk") ? (
+                    <Android class="size-6" />
+                    <span>APK</span>
+                  ) : (
+                    <WebSite class="size-6" />
+                    <span>Ver</span>
+                  )}
                 </LinkButton>
               )}
             </footer>
