@@ -3,6 +3,14 @@ import ExperienceItem from "../components/ExperienceItem.astro";
 
 const experienceList = [
   {
+    title: "Instituto Superior de Formación Docente Salomé Ureña (ISFODOSU)",
+    company: "ISFODOSU",
+    location: "Santo Domingo, Republica Dominicana",
+    date: "Junio 2024 - Actualidad",
+    description:
+      "Idear soluciones para la gestion y mejorara de los servicios internos de la institucion.",
+  },
+  {
     title: "PASANTIA - Analista Programador",
     company: "Grupo Humano",
     location: "Santo Domingo, Republica Dominicana",
@@ -21,7 +29,7 @@ const experienceList = [
 ];
 ---
 
-<ol class="relative border-s  border-gray-700 ml-4">
+<ol class="relative border-s border-gray-700 ml-4">
   {
     experienceList.map((experience) => {
       return (
